@@ -8,7 +8,7 @@ function Sidebar() {
 
     return(
         <>
-            <Image width={300} height={100} src="/assets/img/logo.svg" alt='Imagen logotipo'/>
+            <Image className="mx-auto" width={200} height={100} src="/assets/img/logo.svg" alt='Imagen logotipo'/>
 
             <nav className="mt-10">
                 {categorias.map(categoria=>{

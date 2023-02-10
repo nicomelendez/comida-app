@@ -1,8 +1,11 @@
 import ModalProducto from "@/components/ModalProducto";
+import { Pasos } from "@/components/Pasos";
 import Sidebar from "@/components/SideBar";
 import useQuiosco from "@/hooks/useQuiosco";
 import Head from "next/head";
 import Modal from "react-modal";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 const customStyles = {
     content: {
@@ -34,7 +37,8 @@ export default function Layout({children, pagina}){
                 </aside>
 
                 <main className='md:w-8/12 xl:w-3/4 2xl:w-4/5 h-screen overflow-y-scroll'>
-                    <div className="p-10 mt-10">
+                    <div className="p-10">
+                        <Pasos/>
                         {children}
                     </div>
                 </main>
@@ -42,6 +46,8 @@ export default function Layout({children, pagina}){
             {modal && (<Modal isOpen={modal} style={customStyles}>
                 <ModalProducto/>
             </Modal>)}
+
+            <ToastContainer />
         </>
     )
 
